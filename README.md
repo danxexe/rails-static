@@ -42,3 +42,8 @@ Array of app urls to request. Request the root route by default.
 ### extension
 
 Extension of generated files. Default is no extension.
+
+
+## License
+
+rails-static is released under the [MIT License](LICENSE.txt).
