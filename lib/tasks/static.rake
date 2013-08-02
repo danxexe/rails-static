@@ -18,19 +18,18 @@ namespace :static do
 
       path = path_from_route route
 
-      puts "Generating #{path}"
+      print "Generating #{path} "
 
       r = app.get(route)
-      if r == 200
-        fullpath = full_path path
-        dir = File.dirname(fullpath)
-        FileUtils.mkdir_p dir
-        File.open(fullpath, "w") do |f|
-          f.write(app.response.body)
-        end
-      else
-        $stderr.puts "Error generating static file #{path} #{r.inspect}"
+
+      fullpath = full_path path
+      dir = File.dirname(fullpath)
+      FileUtils.mkdir_p dir
+      File.open(fullpath, "w") do |f|
+        f.write(app.response.body)
       end
+
+      puts r.to_s
     end
   end
 
