@@ -16,7 +16,7 @@ namespace :static do
 
     RailsStatic.config.routes.each do |route|
 
-      path = path_from_route route
+      path = RailsStatic.path_from_route route
       fullpath = full_path path
 
       print "Generating #{path} "
@@ -38,7 +38,7 @@ namespace :static do
   desc "Delete static pages"
   task :clean => :environment do
     RailsStatic.config.routes.each do |route|
-      path = path_from_route route
+      path = RailsStatic.path_from_route route
       fullpath = full_path path
 
       next unless File.exists? fullpath
@@ -52,12 +52,6 @@ namespace :static do
   end
 
   private
-
-  def path_from_route(route)
-    path = route
-    path = path.gsub(%r{/$}, "/#{RailsStatic.config.index}") if route =~ %r{/$}
-    path += RailsStatic.config.extension
-  end
 
   def full_path(path)
     File.join(Rails.public_path, path)
