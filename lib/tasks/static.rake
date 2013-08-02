@@ -17,12 +17,14 @@ namespace :static do
     RailsStatic.config.routes.each do |route|
 
       path = path_from_route route
+      fullpath = full_path path
 
       print "Generating #{path} "
 
+      File.delete fullpath if File.exists? fullpath
+
       r = app.get(route)
 
-      fullpath = full_path path
       dir = File.dirname(fullpath)
       FileUtils.mkdir_p dir
       File.open(fullpath, "w") do |f|
