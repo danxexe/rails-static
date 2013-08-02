@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.version     = '1.0.0'
   s.authors     = ["DanX"]
   s.email       = ["danx.exe@gmail.com"]
-  s.homepage    = "http://www.mobvox.com.br"
+  s.homepage    = "http://danx.in"
   s.summary     = "Generate a static site with Rails."
   s.description = "A rake task for generating static websites using Rails."
 
