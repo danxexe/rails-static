@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "rails-static"
-  s.version     = '1.1.0'
+  s.version     = '1.2.0'
   s.authors     = ["DanX"]
   s.email       = ["danx.exe@gmail.com"]
   s.homepage    = "http://danx.in"
